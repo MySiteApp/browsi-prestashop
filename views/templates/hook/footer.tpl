@@ -24,12 +24,12 @@
 *}
 <script type="text/javascript">
     var _brPrestashop = {
-        checkout: '{$link->getPageLink('order', true, NULL, 'step=1')}',
-        cart: '{$link->getPageLink('order', true)}'
+        checkout: '{$link->getPageLink('order', true, NULL, 'step=1')|escape:'htmlall':'UTF-8'}',
+        cart: '{$link->getPageLink('order', true)|escape:'htmlall':'UTF-8'}'
     };
     (function(w, d){
 {if !empty($browsi_site_id)}        w['_brSiteId'] = '{$browsi_site_id}';
-{/if}        w['_brPlatform'] = ['prestashop', '{$smarty.const._PS_VERSION_}'];{literal}
+{/if}        w['_brPlatform'] = ['prestashop', '{$smarty.const._PS_VERSION_|escape:'htmlall':'UTF-8'}'];{literal}
         function br() {
             var i='browsi-js'; if (d.getElementById(i)) {return;}
             var siteId = /^[a-zA-Z0-9]{1,7}$/.test(w['_brSiteId']) ? w['_brSiteId'] : null;

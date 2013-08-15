@@ -33,7 +33,7 @@ class Browsi extends Module
 	{
 		$this->name = 'browsi';
 		$this->tab = 'mobile';
-		$this->version = 0.1;
+		$this->version = 1.0;
 		$this->author = 'MySiteApp Ltd.';
 		$this->need_instance = 1;
 
@@ -49,28 +49,23 @@ class Browsi extends Module
 
 	public function install()
 	{
-		if (!parent::install()
-				|| !$this->registerHook('footer')
-				|| !$this->registerHook('displayMobileFooterChoice')
-				|| !Configuration::updateValue('BROWSI_SITEID', ''))
-			return false;
-		return true;
+		return parent::install()
+				&& $this->registerHook('footer')
+				&& $this->registerHook('displayMobileFooterChoice')
+				&& Configuration::updateValue('BROWSI_SITEID', '');
 	}
 
 	public function uninstall()
 	{
-		if (!parent::uninstall() ||
-			!Configuration::deleteByName('BROWSI_SITEID'))
-			return false;
-		return true;
+		return parent::uninstall() &&
+			Configuration::deleteByName('BROWSI_SITEID');
 	}
 
 	public function hookFooter($params)
 	{
 		$this->smarty->assign('browsi_site_id', Configuration::get('BROWSI_SITEID'));
-		$display = $this->display(__FILE__, 'footer.tpl');
 
-		return $display;
+		return $this->display(__FILE__, 'footer.tpl');
 	}
 
 	public function hookDisplayMobileFooterChoice($params)
@@ -97,6 +92,7 @@ class Browsi extends Module
 		}
 		$this->context->smarty->assign(array(
 			'browsi_form' => './index.php?tab=AdminModules&configure=browsi&token='.Tools::getAdminTokenLite('AdminModules').'&tab_module='.$this->tab.'&module_name=browsi',
+            'browsi_tracking' => 'http://www.prestashop.com/modules/browsi.png?url_site='.Tools::safeOutput($_SERVER['SERVER_NAME']).'&amp;id_lang='.(int)$this->context->cookie->id_lang,
 			'browsi_site_id' => Configuration::get('BROWSI_SITEID'),
 			'browsi_register_link' => 'http://l.brow.si/15xc6TM',
 			'browsi_message' => $output));

@@ -23,28 +23,29 @@
 *  International Registered Trademark & Property of MySiteApp Ltd
 *}
 <link href="{$module_dir}css/browsi.css" rel="stylesheet" type="text/css">
+<img src="{$browsi_tracking|escape:'htmlall':'UTF-8'}" alt="" style="display: none;"/>
 <div class="browsi-wrap">
     {$browsi_message}
     <div class="br-header">
         <div class="br-content">
             <div class="br-device"></div>
             <div class="br-logo">Brow.si</div>
-            <p class="br-tagline">Drive more customer engagement, generate more traffic and sell more on mobile with Brow.si.</p>
-            <a href="{$browsi_register_link}" class="br-button" title="Register to Brow.si for free" target="_blank">Register for free</a>
+            <p class="br-tagline">{l s ='Drive more customer engagement, generate more traffic and sell more on mobile with Brow.si.' mod='browsi'}</p>
+            <a href="{$browsi_register_link|escape:'htmlall':'UTF-8'}" class="br-button" title="{l s='Register to Brow.si for free' mod='browsi'}" target="_blank">{l s='Register for free' mod='browsi'}</a>
         </div>
         <div class="br-features">
             <div class="br-features-list">
                 <div class="br-col">
-                    <div class="br-feature"><div class="br-i br-i-cart"></div><div class="br-li-caption">Always on shopping cart</div></div>
-                    <div class="br-feature"><div class="br-i br-i-cloud"></div><div class="br-li-caption">Continuous engagement across desktop and mobile</div></div>
+                    <div class="br-feature"><div class="br-i br-i-cart"></div><div class="br-li-caption">{l s='Always on shopping cart' mod='browsi'}</div></div>
+                    <div class="br-feature"><div class="br-i br-i-cloud"></div><div class="br-li-caption">{l s='Continuous engagement across desktop and mobile' mod='browsi'}</div></div>
                 </div>
                 <div class="br-col">
-                    <div class="br-feature"><div class="br-i br-i-share"></div><div class="br-li-caption">Superior social sharing</div></div>
-                    <div class="br-feature"><div class="br-i br-i-push"></div><div class="br-li-caption">Stay in touch with customers through push notifications</div></div>
+                    <div class="br-feature"><div class="br-i br-i-share"></div><div class="br-li-caption">{l s='Superior social sharing' mod='browsi'}</div></div>
+                    <div class="br-feature"><div class="br-i br-i-push"></div><div class="br-li-caption">{l s='Stay in touch with customers through push notifications' mod='browsi'}</div></div>
                 </div>
                 <div class="br-col">
-                    <div class="br-feature"><div class="br-i br-i-analytics"></div><div class="br-li-caption">Front-end analytics</div></div>
-                    <div class="br-feature"><div class="br-i br-i-customizability"></div><div class="br-li-caption">Customizable and localized</div></div>
+                    <div class="br-feature"><div class="br-i br-i-analytics"></div><div class="br-li-caption">{l s='Front-end analytics' mod='browsi'}</div></div>
+                    <div class="br-feature"><div class="br-i br-i-customizability"></div><div class="br-li-caption">{l s='Customizable and localized' mod='browsi'}</div></div>
                 </div>
             </div>
         </div>
@@ -67,7 +68,7 @@
             <div class="br-col br-form-col br-sep">
                 <h4>{l s='How to get your Brow.si Site ID?' mod='browsi'}</h4>
                 <ol class="br-steps-list">
-                    <li><p><a href="{$browsi_register_link}" target="_blank">{l s='Register - It\'s Free!' mod='browsi'}</a></p></li>
+                    <li><p><a href="{$browsi_register_link|escape:'htmlall':'UTF-8'}" target="_blank">{l s='Register - It\'s Free!' mod='browsi'}</a></p></li>
                     <li><p>{l s='When prompted enter your website\'s URL.' mod='browsi'}</p></li>
                     <li><p>{l s='Copy your unique ID and paste it into the Brow.si Site ID field on this page. Your unique ID is under Dashboard > Website Info > Website Brow.si Site ID.' mod='browsi'}</p></li>
                 </ol>
