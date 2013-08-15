@@ -22,9 +22,12 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of MySiteApp Ltd
 *}
-{literal}
 <script type="text/javascript">
-    (function(w, d){{/literal}
+    var _brPrestashop = {
+        checkout: '{$link->getPageLink('order', true, NULL, 'step=1')}',
+        cart: '{$link->getPageLink('order', true)}'
+    };
+    (function(w, d){
 {if !empty($browsi_site_id)}        w['_brSiteId'] = '{$browsi_site_id}';
 {/if}        w['_brPlatform'] = ['prestashop', '{$smarty.const._PS_VERSION_}'];{literal}
         function br() {
