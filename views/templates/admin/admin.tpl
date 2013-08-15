@@ -33,7 +33,7 @@
             <p class="br-tagline">{l s ='Drive more customer engagement, generate more traffic and sell more on mobile with Brow.si.' mod='browsi'}</p>
             <a href="{$browsi_register_link|escape:'htmlall':'UTF-8'}" class="br-button" title="{l s='Register to Brow.si for free' mod='browsi'}" target="_blank">{l s='Register for free' mod='browsi'}</a>
         </div>
-        <div class="br-features">
+        <div class="br-features" {if version_compare($smarty.const._PS_VERSION_,'1.5','<')}style="padding: 1em 1em"{/if}>
             <div class="br-features-list">
                 <div class="br-col">
                     <div class="br-feature"><div class="br-i br-i-cart"></div><div class="br-li-caption">{l s='Always on shopping cart' mod='browsi'}</div></div>

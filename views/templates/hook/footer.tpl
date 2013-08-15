@@ -24,8 +24,9 @@
 *}
 <script type="text/javascript">
     var _brPrestashop = {
-        checkout: '{$link->getPageLink('order', true, NULL, 'step=1')|escape:'htmlall':'UTF-8'}',
-        cart: '{$link->getPageLink('order', true)|escape:'htmlall':'UTF-8'}'
+        checkout: '{$link->getPageLink('order.php', true, NULL, 'step=1')|escape:'htmlall':'UTF-8'}',
+        cart: '{$link->getPageLink('order.php', true)|escape:'htmlall':'UTF-8'}',
+        cartAjax: {if ($smarty.const._PS_VERSION_ < 1.5)}'{$link->getPageLink('cart.php', true)|escape:'htmlall':'UTF-8'}'{else}baseDir{/if}
     };
     (function(w, d){
 {if !empty($browsi_site_id)}        w['_brSiteId'] = '{$browsi_site_id}';

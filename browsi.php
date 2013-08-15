@@ -45,6 +45,9 @@ class Browsi extends Module
 
 		if (!$this->isValidSiteId(Configuration::get('BROWSI_SITEID')))
 			$this->warning = $this->l('Site ID should be configured for customizing and analytics aggregation.');
+        /* Backward compatibility */
+        if (_PS_VERSION_ < 1.5)
+            require(_PS_MODULE_DIR_.'browsi/backward_compatibility/backward.php');
 	}
 
 	public function install()
@@ -64,8 +67,8 @@ class Browsi extends Module
 	public function hookFooter($params)
 	{
 		$this->smarty->assign('browsi_site_id', Configuration::get('BROWSI_SITEID'));
-
-		return $this->display(__FILE__, 'footer.tpl');
+        // Specifying full path to template, to support v1.4
+		return $this->display(__FILE__, 'views/templates/hook/footer.tpl');
 	}
 
 	public function hookDisplayMobileFooterChoice($params)
