@@ -1,4 +1,4 @@
-browsi-prestashop
+Brow.si for PrestaShop
 =================
 
-Prestashop plugin for Brow.si
+PrestaShop plugin for Brow.si
