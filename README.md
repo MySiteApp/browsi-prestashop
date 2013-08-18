@@ -1,6 +1,8 @@
 Brow.si for PrestaShop
 =================
 
-PrestaShop plugin for Brow.si.
+PrestaShop plugin for [Brow.si](https://getbrowsi.com).
 
-Use 'a9jrMb' as Brow.si Site ID for tests.
+Testing
+------------
+Use `a9jrMb` as Brow.si Site ID for tests.
